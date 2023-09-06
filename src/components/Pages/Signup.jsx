@@ -17,14 +17,17 @@ function Signup() {
   };
 
   const generateRandomId = () => {
-    return (
-      Math.random().toString(36).substring(2, 15) +
-      Math.random().toString(36).substring(2, 15)
-    );
+    return Math.floor(Math.random() * 10000);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Check if the password and confirmPassword fields match
+    if (formData.password !== formData.confirmPassword) {
+      alert("password and confirm password should be the same");
+      return;
+    }
 
     // Generate a random ID for the user
     const userId = generateRandomId();
