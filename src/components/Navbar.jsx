@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 
-function Navbar() {
+export const Navbar = () => {
   return (
     <nav className="bg-blue-500 p-4">
       <div className="container mx-auto">
@@ -27,6 +27,4 @@ function Navbar() {
       <Outlet />
     </nav>
   );
-}
-
-export default Navbar;
+};

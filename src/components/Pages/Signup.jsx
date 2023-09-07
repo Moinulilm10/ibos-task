@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-function Signup() {
+export const Signup = () => {
   const [formData, setFormData] = useState({
     email: "",
     username: "",
@@ -80,8 +80,7 @@ function Signup() {
       const store = db.createObjectStore("users", { keyPath: "id" });
 
       // You can define additional indexes if needed
-      // store.createIndex('username', 'username', { unique: true });
-      // ...
+      store.createIndex("email", "email", { unique: true });
 
       console.log("IndexedDB setup complete");
     };
@@ -187,6 +186,4 @@ function Signup() {
       </div>
     </div>
   );
-}
-
-export default Signup;
+};
