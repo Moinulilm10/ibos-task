@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Signup() {
   const [formData, setFormData] = useState({
@@ -164,6 +165,16 @@ function Signup() {
               onChange={handleChange}
               required
             />
+          </div>
+
+          {/* Link to Login Page */}
+          <div className="text-center mt-2">
+            <span className="text-gray-600">
+              If you already have an account,{" "}
+              <Link to="/login" className="text-blue-600">
+                go to login page
+              </Link>
+            </span>
           </div>
 
           <button
